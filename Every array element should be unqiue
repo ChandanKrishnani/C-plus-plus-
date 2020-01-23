@@ -1,0 +1,38 @@
+  #include <iostream>
+  using namespace std;
+  
+  int main()
+ {
+  int n,i,j,arr[10],arr2[10],temp=0,k=1;
+  cout<<"Enter te number";
+  cin>>n;
+  for(i=1;i<=n;i++)
+    {
+      cout<<"Enter the number";
+      cin>>arr[i];
+    }
+     i=1;
+    for(i=1;i<=n;i++)
+      {
+          for(j=i+1;j<=n;j++)
+              {
+                  if(arr[i]==arr[j])
+                    {
+                          k=j;
+                          while(k<=n)
+                              {
+                                  arr[k]=arr[k+1];
+                                  k++;
+                               }
+                           n--;
+                           j--;
+                      }
+                }
+           }
+
+      for(i=1;i<=n;i++)
+            {
+                cout<<endl<<arr[i];
+            }
+        return 0;
+}
