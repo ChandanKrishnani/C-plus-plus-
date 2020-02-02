@@ -1,0 +1,43 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+class abc
+{
+   int a;
+   char lop[30];
+   public:
+       void get(int n,char na[])
+
+       {
+           a=n;
+           strcpy(lop,na);
+
+       }
+       void disp()
+       {
+
+           cout<<"Here is the name  "<<lop ;
+           cout<<endl<<"Here is the roll no"<<a;
+       }
+};
+int main()
+{
+  abc ob[20];
+  int a,j,i;
+  char n[30];
+  cout<<"How many records you want to enter :";
+  cin>>j;
+  for(i=0;i<j;i++)
+  {
+  cout<<"Enter the roll";
+  cin>>a;
+  cout<<endl<<"Enter the name";
+  cin>>n;
+  ob[i].get(a,n);
+  }
+  for(i=0;i<j;i++)
+  {
+  ob[i].disp();
+  }
+  return 0;
+}
