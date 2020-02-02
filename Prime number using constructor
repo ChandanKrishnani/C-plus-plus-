@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+class abc
+{
+
+private:
+    int a;
+    int get();
+public:
+    abc(int n)
+    {
+        a=n;
+    }
+    void disp();
+
+};
+void abc::disp()
+{
+
+    if(get())
+    {
+
+        cout<<"NUmber is prime";
+    }
+    else
+    {
+
+        cout<<"number is not prime";
+    }
+}
+int abc::get()
+{
+    int i,flag=1;
+    for(i=2;i<=a/2;i++)
+    {
+
+        if(!(a%i))
+        {
+
+            flag=0;
+            break;
+        }
+    }
+    return flag;
+}
+
+int main()
+{
+     int a;
+    cout<<"Enter the number";
+    cin>>a;
+    abc obj(a);
+    obj.disp();
+
+
+}
