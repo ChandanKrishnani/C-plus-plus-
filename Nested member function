@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+class abc
+{
+
+    int a,b;
+public:
+     void init();
+     int get();
+     void display();
+
+};
+void abc::init()
+{
+    cout<<"Enter two numbers : ";
+    cin>>a>>b;
+
+}
+int abc::get()
+{
+    if(a>b)
+    {
+
+        return a;
+    }
+    else
+    {
+        return b;
+    }
+}
+void abc::display()
+{
+    cout<<get();
+}
+int main()
+{
+    abc obj;
+    obj.init();
+    obj.get();
+    obj.display();
+
+}
+
