@@ -1,5 +1,5 @@
-#include<conio.h>
-#include<iostream.h>
+#include<iostream>
+using namespace std;
 	class complex
 	{
 	  int a,b;
@@ -19,10 +19,9 @@
 	    b=m.b+n.b;
 	   }
 	};
-void main()
+int main()
 {
  complex ob1,ob2,ob3;
- clrscr();
  float a,b;
  cout<<"Enter the number";
  cin>>a>>b;
@@ -37,6 +36,5 @@ void main()
  cout<<"Sum is ";
  ob3.disp();
  ob3.disp();
-
+return 0;
 }
-
