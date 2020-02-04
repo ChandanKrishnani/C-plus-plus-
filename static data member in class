@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+class abc
+{
+
+    int a;
+    static int b;
+public:
+    void get(int x)
+    {
+        a=x;
+        b++;
+
+    }
+    void disp()
+    {
+
+     cout<<a<<"here is :"<<b;
+    }
+
+};
+int abc::b;
+int main()
+{
+
+     abc obj1,obj2;
+     obj1.get(10);
+     obj2.get(20);
+     obj1.disp();
+     obj2.disp();
+}
+//b will remain same for both objects
