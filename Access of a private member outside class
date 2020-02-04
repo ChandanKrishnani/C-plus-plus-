@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+class abc
+{
+private:
+    int a,b;
+public:
+    void get(int x,int y)
+    {
+        a=x;
+        b=y;
+    }
+     void disp();
+};
+ void abc::disp()
+    {
+        cout<<a<<"and here is "<<b;
+
+    }
+int main()
+{
+    abc obj;
+    obj.get(10,20);
+    obj.disp();
+    return 0;
+
+}
