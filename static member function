@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+class abc
+{
+
+    int a;
+    static int b;
+public:
+
+    void get(int x)
+    {
+        a=x;
+        b++;
+
+    }
+    void display()
+    {
+
+        cout<<a<<endl;
+    }
+    static void disp()
+    {
+        cout<<b<<endl;
+    }
+};
+int abc::b;
+int main()
+{
+
+    abc obj1,obj2;
+    obj1.get(10);
+    obj2.get(20);
+    obj1.display();
+    obj1.disp();
+    obj2.disp();
+    obj2.display();
+
+}
+
+//10
+//2
+//2
+//20
