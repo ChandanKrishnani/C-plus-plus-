@@ -1,0 +1,238 @@
+#include<iostream>
+using namespace std;
+class abc
+{
+    private:
+        int roll;
+        char name[20];
+        int sub1,sub2,sub3,sub4,sub5;
+        float avg;
+    protected:
+        int average()
+        {
+
+            return (sub1+sub2+sub3+sub4+sub5)/5;
+
+        }
+    public:
+        void init()
+        {
+            cout<<"Enter the roll no :";
+            cin>>roll;
+            cout<<"Enter the name :";
+            cin>>name;
+            cout<<"Enter the marks";
+            cin>>sub1>>sub2>>sub3>>sub4>>sub5;
+
+        }
+        void display()
+        {
+            cout<<endl<<"Roll no   name    marks1    marks2    marks3    marks4    marks 5"<<endl;
+            cout<<"-------------------------------------------------------"<<endl;
+            cout<<roll<< "       " << name<<"        "<<sub1<<"        "<<sub2<<"        "<<sub3<<"         "<<sub4<<"         "<<sub5;
+        }
+
+       void disp_avg()
+       {
+
+           avg=average();
+           cout<<"Roll no = "<<roll<<" | "<<"Name = "<<name<<" | "<<"Average = "<<avg<<" | "<<endl;
+       }
+       void disp_result()
+       {
+           avg=average();
+           if(avg>=35)
+           {
+               cout<<endl<<"Roll no : "<< roll <<"Congratulation "<< name << "Passed with "<< avg<<endl;
+
+           }
+           else
+           {
+               cout<<endl<<"Roll no : "<< roll <<" Sorry "<< name <<" Failed with "<<avg<<endl;
+
+           }
+       }
+       int topper()
+       {
+
+          avg=average();
+           return avg;
+       }
+       void disp_fail()
+       {
+           avg=average();
+           if(avg<35)
+           {
+               cout<<"Name :"<<name<<" is failed "<<"  with  "<<avg<<endl;
+           }
+
+       }
+
+     void disp_topper();
+
+
+};
+void abc::disp_topper()
+{
+
+    cout<<"Here is the topper = "<< name <<"With an average of "<< avg<<endl;
+
+}
+int main()
+{
+    abc obj[100];
+    int a,i,j,c,temp,k;
+    cout<<"ENTER THE NUMBER OF RECORDS  :";
+    cin>>a;
+    for(i=0;i<a;i++)
+    {
+        obj[i].init();
+    }
+    while(1)
+    {
+        cout<<"1.Display all records :"<<endl;
+        cout<<"2.Average of all students :"<<endl;
+        cout<<"3.Result of students :"<<endl;
+        cout<<"4.Topper from all students :"<<endl;
+        cout<<"5.Failure students :"<<endl;
+        cout<<"6.To exit from the program :"<<endl;
+        cout<<"---";
+        cin>>j;
+        switch(j)
+        {
+
+     case 1:
+        {
+            for(i=0;i<a;i++)
+                {
+                    obj[i].display();
+                }
+
+                while(1)
+                {
+                      cout<<endl<<"Press 1 to return main menu :";
+                      cin>>c;
+                      if(c==1)
+                      {
+
+                          break;
+
+                      }
+
+                }
+                break;
+
+        }
+    case 2:
+        {
+            for(i=0;i<a;i++)
+            {
+                obj[i].disp_avg();
+            }
+
+
+                while(1)
+                {
+                      cout<<endl<<"Press 1 to return main menu :";
+                      cin>>c;
+                      if(c==1)
+                      {
+
+                          break;
+
+                      }
+
+                }
+
+            break;
+
+        }
+    case 3:
+        {
+
+             for(i=0;i<a;i++)
+            {
+                obj[i].disp_result();
+            }
+
+             while(1)
+                {
+                      cout<<endl<<"Press 1 to return main menu :";
+                      cin>>c;
+                      if(c==1)
+                      {
+
+                          break;
+
+                      }
+
+                }
+
+            break;
+        }
+    case 4:
+        {
+        temp= obj[i].topper();
+        k=0;
+        for(i=1;i<a;i++)
+        {
+            obj[i].topper();
+            if(obj[i].topper()>temp)
+            {
+                temp=obj[i].topper();
+                k=i;
+            }
+
+        }
+        obj[k].disp_topper();
+
+
+
+         while(1)
+                {
+                      cout<<endl<<"Press 1 to return main menu :";
+                      cin>>c;
+                      if(c==1)
+                      {
+
+                          break;
+
+                      }
+
+                }
+
+
+            break;
+        }
+    case 5:
+        {
+            for(i=0;i<a;i++)
+            {
+                obj[i].disp_fail();
+            }
+
+
+         while(1)
+                {
+                      cout<<endl<<"Press 1 to return main menu :";
+                      cin>>c;
+                      if(c==1)
+                      {
+
+                          break;
+
+                      }
+
+                }
+
+            break;
+        }
+    case 6:
+        {
+            return 0;
+        }
+
+
+        }
+    }
+}
