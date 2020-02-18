@@ -1,0 +1,89 @@
+#include<iostream.h>
+#include<conio.h>
+class abc
+{
+  int a;
+  public:
+  void init(int x)
+  {
+   a=x;
+  }
+ int get()
+ {
+  return a;
+ }
+ friend void jop();
+
+};
+void jop()
+{
+  int n,i,m,a,j,k,temp;
+ clrscr();
+ abc obj1[10];
+ abc obj2[10];
+ abc obj3[20];
+ cout<<"Enter the Number of elememts of first :";
+ cin>>n;
+ for(i=0;i<n;i++)
+ {
+  cout<<"Enter the number";
+  cin>>a;
+  obj1[i].init(a);
+ }
+ cout<<"Enter the Number of elemenst for second :";
+ cin>>m;
+ for(j=0;j<m;j++)
+ {
+   cout<<"Enter the number ";
+   cin>>a;
+   obj2[j].init(a);
+ }
+ i=0;
+ j=0;
+ k=0;
+  while(i<n && j<m)
+  {
+   if(obj1[i].get() < obj2[j].get())
+    {
+    temp=obj1[i].get();
+    obj3[k].init(temp);
+    k++;
+    i++;
+   }
+    else
+    {
+     temp=obj2[j].get();
+    obj3[k].init(temp);
+    k++;
+    j++;
+   }
+  }
+  temp=0;
+
+  while(j<m)
+  {
+    temp=obj2[j].get();
+    obj3[k].init(temp);
+    j++;
+    k++;
+  }
+  while(i<n)
+  {
+     temp=obj1[i].get();
+     obj3[k].init(temp);
+     k++;
+     i++;
+   }
+
+
+ for(i=0;i<k;i++)
+ {
+  cout<<"here is "<<obj3[i].get();
+ }
+}
+
+void main()
+{
+
+  jop();
+}
