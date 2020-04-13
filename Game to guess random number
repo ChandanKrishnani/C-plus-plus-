@@ -1,0 +1,64 @@
+#include<iostream>
+#include<time.h>
+#include<stdlib.h>
+using namespace std;
+int main()
+{
+    int i;
+    char a;
+    int n,max,min,points=0;
+    int cmp1,cmp2;
+    while(1)
+    {
+        cout<<endl<<"**********Game to Guess random number*******"<<endl;
+        cout<<"Press y to continue n to exit : ";
+        cin>>a;
+        switch(a)
+        {
+            case 'y':
+            {
+                cout<<endl<<"Enter the Number of guesses : ";
+                cin>>n;
+                cout<<endl<<"Enter the Minimum possible number : ";
+                cin>>min;
+                cout<<endl<<"Enter the Maximum Possible number : ";
+                cin>>max;
+
+                srand(time(0));
+                for(i=0;i<n;i++)
+                    {
+                        cout<<endl<<"Enter your Guess :";
+                        cin>>cmp1;
+                        cmp2=rand()%(max-min+1)+min;
+                        if(cmp1==cmp2)
+                        {
+                            cout<<endl<<"******Congratulations your guess was correct*********";
+                            points++;
+                        }
+                        else if(cmp2>cmp1)
+                        {
+                            cout<<endl<<"The number you guessed is too low";
+                            cout<<endl<<"Number was :"<<cmp2;
+
+                        }
+                        else
+                        {
+                            cout<<endl<<"The number you guessed is too high ";
+                                  cout<<endl<<"Number was :"<<cmp2;
+
+                        }
+
+                    }
+                    cout<<endl<<"Your final points are: "<<points;
+
+                break;
+            }
+            case 'n':
+            {
+                return 0;
+            }
+        }
+}
+}
+
+
