@@ -1,0 +1,80 @@
+#include<iostream>
+#include<string>
+#include<vector>
+int id;
+using namespace std;
+class record
+{
+
+    public:
+    string name="";
+    int age;
+
+};
+ vector <record> myrec;
+ void addrecord(string myname , int umr)
+ {
+    record obj1;
+    obj1.name=myname;
+    obj1.age=umr;
+    myrec.push_back(obj1);
+    id++;
+    cout<<"Record was successfully added";
+
+ }
+void fetch()
+{
+    int a;
+    record obj1;
+    cout<<"Enter the index of data ";
+    cin>>a;
+    if(a>id)
+    {
+        cout<<"Wrong input";
+    }
+    else
+    {
+       obj1=myrec.at(a);
+      cout<<"Here is the name :"<<obj1.name;
+      cout<<"Here is the age :"<<obj1.age;
+    }
+}
+
+ int main()
+ {
+     int n;
+     while(1)
+     {
+         cout<<endl<<"1.Add a record";
+         cout<<endl<<"2.fetch record";
+         cout<<endl<<"3.to exit";
+         cin>>n;
+         switch(n)
+        {
+         case 1:
+             {
+                 int age;
+                 string name;
+                 cout<<"Enter the name :";
+                 cin.ignore();
+                 getline(cin,name);
+                 cout<<"Enter the Age :";
+                 cin>>age;
+                 addrecord(name,age);
+                 break;
+             }
+         case 2:
+            {
+                fetch();
+                break;
+
+            }
+         case 3:
+            {
+                return 0;
+            }
+
+        }
+     }
+
+ }
