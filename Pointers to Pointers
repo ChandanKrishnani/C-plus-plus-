@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+int main()
+
+{
+    char *ch[25]=
+    {
+        "chandan",
+        "Tahal ram",
+        "Nisha",
+        "Hitu"
+    };
+    for(char **chk=ch;*chk!=NULL;chk++)
+    {
+
+        cout<<"Name is  = "<<*chk<<endl;
+    }
+    return 0;
+}
