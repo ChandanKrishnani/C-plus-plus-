@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+class jack
+{
+    int i;
+public:
+    jack(int j):i(j)
+    {
+        cout<<"Here is the value if i "<<i<<endl;
+    }
+    ~jack()
+    {
+        cout<<"It is a destructor welcome";
+
+    }
+
+};
+int main()
+{
+    jack obj1(10);
+    jack *p=new jack(2);
+    delete p;
+
+    return 0;
+
+}
