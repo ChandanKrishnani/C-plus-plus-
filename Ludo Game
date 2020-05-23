@@ -1,0 +1,126 @@
+#include<iostream>
+#include<time.h>
+#include<stdlib.h>
+#include<stdio.h>
+int red[18],green[18],yellow[18],blue[18];
+using namespace std;
+void delay(unsigned int mseconds)
+{
+    clock_t goal = mseconds + clock();
+    while (goal > clock());
+}
+int totalplayers()
+{
+    int n;
+    while(1)
+    {
+        cout<<endl<<"Enter the number are going to Play(1 To 4 ) :";
+        cin>>n;
+        if(n>1 &&n<=4)
+        {
+            return n;
+            break;
+        }
+
+    }
+}
+void printboard()
+{
+    int i;
+    i=0;
+    cout<<endl;
+    cout<<endl<<"                                               |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |";
+    cout<<endl<<"                                               |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |";
+    cout<<endl<<"                                               |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |";
+    cout<<endl<<"                                               |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |";
+    cout<<endl<<"                                               |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |";
+    cout<<endl<<"                                               |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |";
+    cout<<endl<<"                           |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |                   |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |";
+    cout<<endl<<"                           |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |                   |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |";
+    cout<<endl<<"                           |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |                   |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |";
+    cout<<endl<<"                           |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |                   |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |";
+    cout<<endl<<"                           |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |                   |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |";
+    cout<<endl<<"                           |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |                   |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |";
+    cout<<endl<<"                                               |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |";
+    cout<<endl<<"                                               |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |";
+    cout<<endl<<"                                               |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |";
+    cout<<endl<<"                                               |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |";
+    cout<<endl<<"                                               |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |";
+    cout<<endl<<"                                               |  "<<i<<"  |"<<"|  "<<i<<"  |"<<"|  "<<i<<"  |";
+    cin>>i;
+
+}
+void game()
+{
+    int n;
+    string str(" \n Hello i am Chandan I am the developer of this Game \n Have fun ! :");
+    char ck;
+    for(int i=0;i<str.length();i++)
+    {
+        ck=str.at(i);
+        cout<<ck;
+        delay(0);
+    }
+    system("cls");
+    cout<<endl<<"Lets start the game";
+    n=totalplayers();
+    cout<<endl<<"This is time to select colors !";
+    int arr[4];
+    int i=1;
+    while(i<=n)
+    {
+        cout<<endl<<"1. Enter 1 for red";
+        cout<<endl<<"2. Enter 2 for green";
+        cout<<endl<<"3. Enter 3 for Yellow";
+        cout<<endl<<"4. Enter 4 for blue";
+        cout<<endl<<"Enter the color for "<<i<<" player :";
+        cin>>arr[i];
+        i++;
+    }
+    i=1;
+    while(i<=n)
+    {
+        if(arr[i]==1)
+        {
+            cout<<endl<<"Player "<<i<<" choosed red color";
+        }
+
+        else if(arr[i]==2)
+        {
+            cout<<endl<<"Player "<<i<<" choosed green color";
+        }
+
+        else if(arr[i]==3)
+        {
+            cout<<endl<<"Player "<<i<<" choosed yellow color";
+        }
+        else
+        {
+            cout<<endl<<"Player "<<i<<" choosed blue color";
+        }
+        i++;
+    }
+    printboard();
+
+
+}
+
+int main()
+{
+    char n;
+    while(1)
+    {
+        cout<<endl<<"Do you want to play the game(y/n) :";
+        cin>>n;
+        if(n=='y')
+        {
+            game();
+        }
+        else
+        {
+            break;
+        }
+    }
+}
+
+
