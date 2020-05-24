@@ -1,0 +1,61 @@
+#include<iostream>
+using namespace std ;
+int main()
+{
+
+    int i,j,k,l,m;
+    for(i=1;i<=18;i++)
+    {
+        if(i<=6)
+        {
+            for(j=i;j<=i;j++)
+            {
+                cout<<"..................";
+            }
+            for(k=1;k<=3;k++)
+            {
+                cout<<" | "<<k<<" | ";
+            }
+            for(j=i;j<=i;j++)
+            {
+                cout<<"..................";
+            }
+
+
+        }
+        if(i>6 && i <=12 )
+        {
+            for(l=1;l<=3;l++)
+            {
+                 cout<<" | "<<l<<" | ";
+            }
+            for(j=i;j<=i;j++)
+            {
+                cout<<"...............";
+            }
+             for(l=1;l<=3;l++)
+            {
+                 cout<<" | "<<l<<" | ";
+            }
+
+        }
+        if(i>12)
+        {
+              for(j=i;j<=i;j++)
+            {
+                cout<<"..................";
+            }
+            for(k=1;k<=3;k++)
+            {
+                cout<<" | "<<k<<" | ";
+            }
+            for(j=i;j<=i;j++)
+            {
+                cout<<"..................";
+            }
+
+
+        }
+        cout<<endl;
+    }
+}
