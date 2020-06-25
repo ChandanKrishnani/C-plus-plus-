@@ -1,0 +1,64 @@
+#include<iostream>
+#include<string.h>
+#include<stdio.h>
+using namespace std;
+class abc
+{
+
+	public:
+        string a;
+    	abc(string z)
+    	{
+    	  a.assign(z);
+    	}
+    	int operator ==(abc &c) //overloading of operator to compare the objects
+    	{
+
+    	     int size1 = a.length();
+    	     int size2 = c.a.length();
+
+    	     cout<<a<<size1<<endl;
+    	     cout<<c.a<<endl<<size2;
+        		if(size1==size2)
+                {
+                    return 1;
+                }
+                    return 0;
+
+    	}
+    friend bool operator !=(abc);
+};
+     bool operator !=(abc &c)
+    {
+
+
+             int size1 = a.length();
+    	     int size2 = c.a.length();
+        		if(size1!=size2)
+                {
+                    return obj3;
+                }
+                return 0;
+}
+int main()
+{
+    char a[20];
+    cin>>a;
+    abc obj1(a);
+    cin>>a;
+    abc obj2(a);
+    if((obj1==obj2)==1)
+    {
+        cout<<"BOth are equal";
+    }
+    abc obj3;
+    else if((obj1!=obj2)==1)
+    {
+        cout<<"They are not equal";
+    }
+    else
+    {
+        cout<<"They are ot equal";
+    }
+
+}
