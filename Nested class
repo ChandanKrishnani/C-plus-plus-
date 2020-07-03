@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+class abc
+{
+     int j;
+ public:
+
+    abc(int x)
+    {
+        j=x;
+    }
+    class jkl
+    {
+        int k;
+        public:
+        jkl(int x)
+        {
+            k=x;
+        }
+        void sum(abc a1)
+        {
+
+            cout<<"Here is the sum "<<a1.j + k;
+        }
+
+
+    };
+};
+int main()
+{
+    abc a(10);
+    abc::jkl d(4);
+    d.sum(a);
+    return 0;
+}
