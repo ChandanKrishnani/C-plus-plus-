@@ -1,0 +1,60 @@
+#include<iostream>
+using namespace std;
+class marks
+{
+
+    int eng;
+    int sans;
+    int hindi;
+public :
+    marks()
+    {
+        eng=0;
+        sans=0;
+        hindi=0;
+    }
+    void getMarks()
+    {
+     cout<<"Enter the marks for eng :";
+     cin>>eng;
+     cout<<"Enter the marks for hindi :";
+     cin>>hindi;
+     cout<<"Enter the marks or sanskrit : ";
+     cin>>sans;
+
+    }
+    void printMarks()
+    {
+
+        cout<<"Here is of eng"<<eng<<endl<<"Here is of hindi"<<hindi<<endl<<"here is of sanskri"<<sans;
+
+    }
+};
+class student
+{
+    marks obj;
+    string name;
+public:
+    void readDetails()
+    {
+
+        cout<<"Enter the name : ";
+        getline(cin,name);
+        obj.getMarks();
+    }
+    void PrintStudent()
+    {
+
+        cout<<"Students name"<<name<<endl;
+        obj.printMarks();
+
+    }
+
+};
+int main()
+{
+  student obj1;
+  obj1.readDetails();
+  obj1.PrintStudent();
+  return 0;
+}
