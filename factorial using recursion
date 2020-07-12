@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int recur(int l)
+{
+
+    if(l<=0)
+    {
+        return 1;
+    }
+    else
+    {
+       return (l*recur(l-1));
+    }
+
+}
+int main()
+{
+    int j,fact;
+    cin>>j;
+    fact=recur(j);
+    cout<<fact;
+}
